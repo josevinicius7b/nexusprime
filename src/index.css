@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Barlow:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 0%;
+  --foreground: 0 0% 100%;
+  --card: 0 0% 5%;
+  --card-foreground: 0 0% 100%;
+  --primary: 45 100% 51%;
+  --primary-foreground: 0 0% 0%;
+  --secondary: 220 100% 55%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 0 0% 15%;
+  --muted-foreground: 0 0% 100% / 0.7;
+  --accent: 45 100% 51%;
+  --accent-foreground: 0 0% 0%;
+  --destructive: 0 84.2% 60.2%;
+  --border: 0 0% 100% / 0.2;
+  --input: 0 0% 100% / 0.2;
+  --ring: 45 100% 51% / 0.5;
+  --radius: 9999px;
+  --gold: #FFB800;
+  --electric-blue: #0066FF;
+  --neon-blue: #00D4FF;
+  --glass-bg: rgba(255, 184, 0, 0.05);
+  --glass-border: rgba(255, 184, 0, 0.2);
+  --glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  --glass-blur: 16px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background: #000;
+  color: #fff;
+  font-family: 'Barlow', sans-serif;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Custom select option styling */
+select option {
+  background: #0a0a0a;
+  color: #fff;
+}
+
+/* Input placeholder color */
+input::placeholder, textarea::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+@layer components {
+  .liquid-glass {
+    background: rgba(255, 184, 0, 0.04);
+    background-blend-mode: luminosity;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: none;
+    box-shadow: inset 0 1px 1px rgba(255, 184, 0, 0.12);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .liquid-glass::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1.4px;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 184, 0, 0.5) 0%,
+      rgba(255, 184, 0, 0.2) 20%,
+      rgba(0, 102, 255, 0.05) 40%,
+      rgba(0, 102, 255, 0.05) 60%,
+      rgba(255, 184, 0, 0.2) 80%,
+      rgba(255, 184, 0, 0.5) 100%
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .liquid-glass-strong {
+    background: rgba(255, 184, 0, 0.06);
+    background-blend-mode: luminosity;
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
+    border: none;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2),
+      inset 0 1px 1px rgba(255, 184, 0, 0.18);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .liquid-glass-strong::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1.4px;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 184, 0, 0.6) 0%,
+      rgba(255, 184, 0, 0.25) 20%,
+      rgba(0, 102, 255, 0.08) 40%,
+      rgba(0, 102, 255, 0.08) 60%,
+      rgba(255, 184, 0, 0.25) 80%,
+      rgba(255, 184, 0, 0.6) 100%
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .text-gold {
+    color: #FFB800;
+  }
+
+  .text-electric-blue {
+    color: #0066FF;
+  }
+
+  .bg-gold {
+    background-color: #FFB800;
+  }
+
+  .text-neon-blue {
+    color: #00D4FF;
+  }
+
+  .bg-neon-blue {
+    background: linear-gradient(135deg, #00D4FF, #0066FF);
+  }
+
+  .glow-neon {
+    box-shadow: 0 0 24px rgba(0, 212, 255, 0.35);
+  }
+}
